@@ -9,5 +9,5 @@ class FlightsListView(ListAPIView):
     serializer_class = FlightsListSerializer
 
 class UpcomingBookingView(ListAPIView):
-    queryset = Booking.objects.filter(date__gt=timezone)
+    queryset = Booking.objects.filter(date__gt=timezone.now())
     serializer_class = UpcomingBookingSerializer
