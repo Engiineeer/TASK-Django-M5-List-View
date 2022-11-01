@@ -6,7 +6,7 @@ class FlightsListSerializer(serializers.ModelSerializer):
         model = Flight
         fields = ['id', 'destination', 'time','price',]
 
-class UpcomingBookingSerializer(serializers.ModelSerializer):
+class BookinglistSerializer(serializers.ModelSerializer):
     class Meta:
         model = Booking
         fields = ['id', 'flight', 'date',]
@@ -16,7 +16,7 @@ class BookingDetailSerializer(serializers.ModelSerializer):
         model = Booking
         fields = ['id', 'flight', 'date', 'passengers',]
 
-class BookingCreateSerializer(serializers.ModelSerializer):
+class BookingupdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Booking
         fields = ['passengers', 'date',]

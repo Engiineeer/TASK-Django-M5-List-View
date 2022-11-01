@@ -15,12 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from flights.views import FlightsListView, UpcomingBookingView ,BookingDetailView, BookingCreateView,BookingUpdateView, BookingDeleteView
+from flights.views import FlightsListView, BookingListView ,BookingDetailView ,BookingUpdateView, BookingDeleteView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("flightlist/", FlightsListView.as_view(),name="flights-list"),
-    path("upcomeingbooking/", UpcomingBookingView.as_view(),name="bookings-list"),
+    path("booking/", BookingListView.as_view(),name="bookings-list"),
     path('detail/<int:object_id>/', BookingDetailView.as_view(), name='booking-details'),
     path('update/<int:object_id>/', BookingUpdateView.as_view(), name='update-booking'),
     path('cancel/<int:object_id>/', BookingDeleteView.as_view(), name='cancel-booking'),
